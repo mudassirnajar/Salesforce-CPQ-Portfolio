@@ -1,36 +1,71 @@
+
 # Salesforce CPQ - Multi Currency
 
-## Scenario
+## Overview
 
-Created a product named **1 gm Gold Ring**.
+This project demonstrates how Salesforce CPQ handles multiple currencies using Price Books and Quotes.
 
-Created Price Book Entries in:
-- INR
-- USD
+---
 
-Created a Quote.
+## Business Scenario
+
+A product named **1 gm Gold Ring** was created.
+
+The product was added to the Standard Price Book with prices in different currencies.
+
+Initially, the product was not appearing in the Quote Line Editor.
+
+---
 
 ## Problem
 
-The product was not appearing in the Quote Line Editor when the Price Book Entry currency was USD.
+The Quote Currency was **INR**, while the Product Price Book Entry Currency was **USD**.
+
+Since the currencies were different, Salesforce CPQ did not display the product.
+
+---
 
 ## Root Cause
 
-The Quote Currency was INR, while the Product Price Book Entry Currency was USD.
+A Quote only supports **one currency**.
 
-Salesforce CPQ only displays products whose Price Book Entry currency matches the Quote currency.
+Products are shown only if the **Price Book Entry Currency** matches the **Quote Currency**.
+
+---
 
 ## Solution
 
-Changed the Quote Currency from INR to USD.
+Changed the Quote Currency from **INR** to **USD**.
+
+---
 
 ## Result
 
 The product appeared successfully in the Quote Line Editor.
 
-## Key Learning
+---
 
-- One Quote supports only one currency.
-- One Quote supports only one Price Book.
-- Products are filtered based on the Quote Currency.
-- Quote Currency must match the Price Book Entry Currency.
+# Screenshots
+
+## Product
+
+![Product](product.jpg)
+
+---
+
+## Opportunity
+
+![Opportunity](opportunity.jpg)
+
+---
+
+## Quote
+
+![Quote](quote.jpg)
+
+---
+
+## Quote Line
+
+![Quote Line](quote%20line.jpg)
+
